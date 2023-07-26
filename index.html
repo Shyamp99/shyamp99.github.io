@@ -1,0 +1,328 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="./favicon.ico">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script type="text/javascript">
+
+            $(document).ready(function(){ 
+                var matched, browser;
+
+                jQuery.uaMatch = function( ua ) {
+                    ua = ua.toLowerCase();
+ 
+                    var match = /(chrome)[ \/]([\w.]+)/.exec( ua ) ||
+                        /(webkit)[ \/]([\w.]+)/.exec( ua ) ||
+                        /(opera)(?:.*version|)[ \/]([\w.]+)/.exec( ua ) ||
+                        /(msie) ([\w.]+)/.exec( ua ) ||
+                        ua.indexOf("compatible") < 0 && /(mozilla)(?:.*? rv:([\w.]+)|)/.exec( ua ) ||
+                        [];
+
+                    return {
+                        browser: match[ 1 ] || "",
+                        version: match[ 2 ] || "0"
+                    };
+                };
+
+                matched = jQuery.uaMatch( navigator.userAgent );
+                browser = {};
+
+                if ( matched.browser ) {
+                    browser[ matched.browser ] = true;
+                    browser.version = matched.version;
+                }
+
+
+                if (browser.mozilla) {
+                    console.log("test");
+                    var jftags = $('a');
+                    console.log(jftags);
+                    for (var i = 5; i < 10; i++){
+                        var tag = jftags[i];
+                        $(tag).addClass("list-links");
+                    }
+                    for (var i = 11; i < 16; i++){
+                        var tag = jftags[i];
+                        $(tag).addClass("list-links");
+                    }
+                    
+                    // $("a").css("cssText", "-webkit-text-fill-color: white !important");
+                    // $("a").css("cssText", "background: white");
+                    // $("a").css("cssText", "background-clip: text");
+                    // $("a").css("cssText", "-webkit-background-clip: text");
+                    // $("a").hover(function() {
+                    //     $(this).css("color","#4ECCA3 !important");
+                    //     $(this).css("-webkit-text-fill-color","white"); 
+                    // });
+                    console.log("test");
+                }
+            }
+            );
+            
+            $(document).on("scroll", function () {
+                var pageTop = $(document).scrollTop();
+                var pageBottom = pageTop + $(window).height();
+                var tags = $(".general-nav");
+                // console.log(tags);
+                for (var i = 0; i < tags.length; i++) {
+                    var nav_tag = tags[i];
+                    // console.log("i = "+i);
+                    // console.log($(nav_tag).position().top);
+                    // console.log(pageTop);
+                    if ($(nav_tag).position().top <= 150+((pageTop+pageBottom)/2) && $(nav_tag).position().top >=((pageTop+pageBottom)/2)-150) {
+                        // $(".intro-nav").removeClass("visible")
+                        $(nav_tag).addClass("visible");
+                        if (i != 0){
+                            $(tags[i-1]).removeClass("visible");
+                        }
+
+                    } else {  
+                        $(nav_tag).removeClass("visible");
+                        // $(".intro-nav").addClass("visible");
+                    }
+                }
+            })
+        
+            
+        </script>
+        <link href="./main.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <div class = "intro-block">
+            <main id = "intro-container"> 
+                <div class = "intro-nav">
+                    <span class="fade-in">
+                    <strong>00</strong>
+                    <br>
+                    Welcome
+                    </span>   
+                </div> 
+                <div class = "intro-blurb">
+                    <span class="fade-in"> 
+                    <a href="https://youtu.be/rEq1Z0bjdwc?t=6" target= "_blank"  id = "general-kenobi"> Hello There </a>  <!--onclick="document.getElementById('general-kenobi').innerHTML='Hello There ... General Kenobi';"     <span id = "kenobi">... General Kenobi</span></a> -->
+                    <br>
+                    I am Shyam Patel: a developer, bio nerd, regular nerd, and minimalist. 
+                    <br>
+                    This is my 
+                    <a href = "https://www.merriam-webster.com/dictionary/TL%3BDR#:~:text=1%20%3A%20too%20long%3B%20didn',even%20sit%20down%20and%20read" target="_blank">TLDR.</a>
+                    </span>
+                </div>
+                
+            </main>
+        </div>
+
+        
+        <div id = "about-me" class = "general-block">
+            <main class = "container">
+                <div class = "general-nav">
+                    <strong>01</strong>
+                    <br>
+                    About me 
+                </div>
+                <div class = "content-block">
+                    I'm a software engineer with a keen interest in <a href="https://en.wikipedia.org/wiki/Bioinformatics" target= "_blank">bioinformatics</a> and artificial intelligence. When I am not coding, you can usually find me baking, learning music production or reading. I am currently reading <a href="https://shepherd.com/book/option-volatility-and-pricing" target = "_blank">Sheldon Natenberg's Option Volatility and Pricing (2nd ed.)</a> and <a href="https://www.penguinrandomhouse.com/books/669586/immune-by-philipp-dettmer/" target = "_blank">Immune by Philipp Dettmer (Kurzgesagt)</a>.
+                </div>
+            </main>
+        </div>
+
+        <div id = "education" class = "general-block">
+            <main class = "container">
+                <div class = "general-nav" >
+
+                    <strong>02</strong>
+                    <br>
+                    Education
+                </div>
+                <div class = "content-block">
+                    <ul style="list-style-type:none; margin-top: 0; color:rgb(124, 124, 124);">
+                        <li class = "list-elem">
+                            <li class = "list-elem-name">
+                                B.S. Computer Science
+                                <b><br> <span class = "list-elem-desc"> Rutgers University
+                                    <br> Relevant Coursework:  Operating Systems, Internet Technology, Algorithms, Intro to AI (Graduate), Brain Inspired Computing (Graduate), Deep Learning, Graph Theory, Systems Programming, Discrete Mathematics and Probability, Differential Equations</span>
+                            </b></li>
+                            <li class = "list-elem-date">
+                               <span style = "color: white; font-weight:200;"> Sept 2017 - May 2021</span>
+                            </li>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </main>
+        </div>
+
+        <div id = "Prof-exp" class = "extended-general-block">
+            <main class = "container">
+                <div class = "general-nav" >
+
+                    <strong>03</strong>
+                    <br>
+                    Experience  
+                </div>
+                <div class = "list-block">
+                    <br>
+                    <ul style="list-style-type:none; margin-top: 0; ">
+
+                        <li class = "list-elem" id = "le">
+                            <a href="https://www.ccmtrading.com/" target="_blank" class = "jank-fix" id = "ll">
+                                <b><div class = "list-elem-name" id = "role"> 
+                                     Software Developer
+                                    <br> <span class = "list-elem-desc"> Cardinal Capital Management (Chicago)</span>
+                                </div>
+                                <div class = "list-elem-date" id = "date"> Nov 2022 - July 2023 </div>
+                            </b></a>
+                        </li>
+
+                    <ul style="list-style-type:none; margin-top: 0; ">
+
+                        <li class = "list-elem" id = "le">
+                            <a href="https://www.bnymellon.com/" target="_blank" class = "jank-fix" id = "ll">
+                                <b><div class = "list-elem-name" id = "role"> 
+                                     Software Engineer
+                                    <br> <span class = "list-elem-desc"> The Bank of New York Mellon </span>
+                                </div>
+                                <div class = "list-elem-date" id = "date"> Aug 2021 - Nov 2022 </div>
+                            </b></a>
+                        </li>
+                        
+                        <li class = "list-elem" id = "le">
+                            <a href="https://mbs.rutgers.edu/catalog/python-methodologies" target="_blank" class = "jank-fix" id = "ll">
+                                <b><div class = "list-elem-name" id = "role"> 
+                                     Teaching Assistant
+                                    <br> <span class = "list-elem-desc"> Rutgers University </span>
+                                </div>
+                                <div class = "list-elem-date" id = "date"> May 2020 - May 2021 </div>
+                            </b></a>
+                        </li>
+                       
+                        <li class = "list-elem" id = "le">
+                            <a href="https://resources.cs.rutgers.edu/docs/rooms-equipment/cave/" target="_blank" class = "jank-fix" id = "ll">
+                                <b><div class = "list-elem-name" id = "role" > 
+                                     I-Lab Assistant 
+                                    <br> <span class = "list-elem-desc"> Rutgers University </span>
+                                </div>
+                                <div class = "list-elem-date" id = "date"> Sept 2019 - May 2021 </div>
+                            </b></a>
+                        </li>
+                        
+                        <li class = "list-elem" id = "le">
+                            <a href="https://www.hackru.org" target="_blank" class = "jank-fix" id = "ll">
+                                <b><div class = "list-elem-name" id = "role"> 
+                                    Day-Of and Events Coordination Director
+                                    <br> <span class = "list-elem-desc"> HackRU </span>
+                                </div>
+                                <div class = "list-elem-date" id = "date"> Sept 2017 - May 2021 </div>
+                            </b></a>
+                        </li>
+                        
+                        <li class = "list-elem" id = "le">
+                            <a href="http://cronos.rutgers.edu/~diez/  " target="_blank" class = "jank-fix" id = "ll">
+                                <b><div class = "list-elem-name" id = "role"> 
+                                    Research Assistant 
+                                    <br> <span class = "list-elem-desc"> LEFTE Lab </span>
+                                </div>
+                                <div class = "list-elem-date" id = "date"> July 2020 - Sept 2020 </div>
+                            </b></a>
+                        </li>
+                        
+                        <li class = "list-elem"  id = "le">
+                            <a href="https://bromberglab.org/" target="_blank" class = "jank-fix" id = "ll">
+                                <b><div class = "list-elem-name" id = "role"> 
+                                    Research Assistant 
+                                    <br> <span class = "list-elem-desc"> Bromberg Lab </span>
+                                </div>
+                                <div class = "list-elem-date" id = "date"> Apr 2019 - Oct 2019 </div>
+                            </b></a>
+                        </li>
+                        
+                        <li>
+                            <div class = "additional-info-block" id = "read-more-div"> <a href= "./Shyam Patel Resume.pdf" target="_blank" id = "read-more-link"> Read More </a> </div>
+                        </li>
+                    </ul>
+                    
+                    <!-- <div class = "additional-info-block"> <a href= "Shyam Patel Resume.pdf" target="_blank">Read More </a> </div> -->
+                </div>
+                <!-- <div class = "additional-info-block"> <a href= "Shyam Patel Resume.pdf" target="_blank">Read More </a> </div> -->
+            </main>
+        </div>
+
+        <div id = "Projects" class = "general-block">
+            <main class = "container">
+                <div class = "general-nav">
+                    <strong>04</strong>
+                    <br>
+                    Projects 
+                </div>
+                <div class = "list-block">
+                    <br>
+                    <ul style="list-style-type:none; margin-top: 0;">
+                        <li class = "list-elem" id = "le">
+                            <a href="https://github.com/Shyamp99/BERT-CNN-Toxic-Speech-Classifier" target="_blank" class = "jank-fix" id = "ll">
+                                <b><div class = "list-elem-name" id = "role"> 
+                                    BERT-CNN-Toxic-Speech-Classifier
+                                    <br> <span class = "list-elem-desc"> Python 3, Pytorch, Hugging Face, Numpy, Plotly, Pandas </span>
+                                </div>
+                                <div class = "list-elem-date" id = "date"> Dec 2020 </div>
+                            </b></a>
+                        </li>
+                        <li class = "list-elem" id = "le">
+                            <a href="https://github.com/Shyamp99/Ping-in-Rust" target="_blank" class = "jank-fix" id = "ll">
+                                <b><div class = "list-elem-name" id = "role" > 
+                                    Rust Ping 
+                                    <br> <span class = "list-elem-desc"> Rust Standard Library </span>
+                                </div>
+                                <div class = "list-elem-date" id = "date"> Sept. 2020 </div>
+                            </b></a>
+                        </li>
+                        <li class = "list-elem" id = "le">
+                            <a href="https://github.com/Shyamp99/Virtual-Memory" target="_blank" class = "jank-fix" id = "ll">
+                                <b><div class = "list-elem-name" id = "role" > 
+                                    User-Level Memory Management 
+                                    <br> <span class = "list-elem-desc"> C Standard Library </span>
+                                </div>
+                                <div class = "list-elem-date" id = "date"> Apr 2020 </div>
+                            </b></a>
+                        </li>
+                        <li class = "list-elem" id = "le">
+                            <a href="https://github.com/Shyamp99/LSTM-stock-predict" target="_blank" class = "jank-fix" id = "ll">
+                                <b><div class = "list-elem-name" id = "role" > 
+                                    LSTM Stock Prediction 
+                                    <br> <span class = "list-elem-desc"> Python 3, Keras, Plotly, Numpy, Pandas </span>
+                                </div>
+                                <div class = "list-elem-date" id = "date"> Dec 2019 </div>
+                            </b></a>
+                        </li>
+                        <li class = "list-elem" id = "le">
+                            <a href="https://github.com/Shyamp99/Multithreaded_BankClient" target="_blank" class = "jank-fix" id = "ll">
+                                <b><div class = "list-elem-name" id = "role" > 
+                                    Multithreaded Banking Client Server
+                                    <br> <span class = "list-elem-desc"> C Standard Library </span>
+                                </div>
+                                <div class = "list-elem-date" id = "date"> Dec 2018 </div>
+                            </b></a>
+                        </li>
+                        <li>
+                            <div class = "additional-info-block" id = "read-more-div"> <a href= "./Shyam Patel Resume.pdf" target="_blank" id = "read-more-link"> Read More </a> </div>
+                        </li>
+                    </ul>
+                </div>
+            </main>
+        </div>
+
+        <div id = "contact" class = "final-block">
+            <main class = "container">
+                <div class = "general-nav">
+                
+                    <strong>05</strong>
+                    <br>
+                    Contact
+                </div>
+                <div class = "content-block">
+                    Reach out to me on <strong><a href = "https://www.linkedin.com/in/shyamp99" target= "_blank">Linkedin</a></strong> and find me on <strong><a href = "https://github.com/shyamp99" target= "_blank">Github</a></strong>.
+                </div>
+            </main>
+        </div>
+</body>
+</html>

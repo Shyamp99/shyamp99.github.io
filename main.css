@@ -1,0 +1,518 @@
+@font-face {
+    font-family: 'webfont';
+    src: url('./fonts/bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'webfont';
+    src: url('./fonts/extralight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'webfont';
+    src: url('./fonts/semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'webfont';
+    src: url('./fonts/medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'webfont';
+    src: url('./fonts/thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'webfont';
+    src: url('./fonts/regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'webfont';
+    src: url('./fonts/light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face{
+    font-family: quarkbold;
+    src: url("./fonts/Quark-Bold.otf");
+        
+}
+
+@font-face{
+    font-family: quarklight;
+    src: url("./fonts/Quark-Light.otf");
+            
+}
+
+/* * {
+    box-sizing: border-box;
+    &::before, &::after {
+      box-sizing: border-box;
+    }
+  } */
+
+.container {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    grid-column-gap: 0.5vw;
+    width:50vw;
+    
+}
+
+.intro-container {
+    position: absolute;
+    top:50%;
+    margin-top:50vh;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    grid-column-gap: 0.5vw;
+    width:50vw;
+    
+}
+
+
+
+html, body {
+    background-color: #101010;
+    /* font-family: quarklight; */
+    color:white;
+    height: 100%;
+    font-family: 'webfont', sans-serif;
+    /* width: 100%;
+    margin: 0;
+    padding: 0; */
+}
+
+div {
+    float: left;
+    padding: 0 0.777000777000777vh;
+}
+
+ul {
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    /* margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;*/
+    padding-inline-start: 0; 
+    /* font-weight: 400; */
+    /* -webkit-text-fill-color: white;   */
+}
+
+li {
+    margin: 0;
+    padding: 0;
+    display: block;
+    /* font-weight: 400; */
+}
+@media (min-width:801px){
+    a{
+        font-family: 'webfont', sans-serif;
+        position: relative;
+        font-weight: 400;
+        overflow: visible;
+        background: linear-gradient(to right, #4ECCA3 50%, white 10%, white 0% 10%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;   
+        background-size: 200% 100%;
+        background-position: 100%;
+        transition: background-position 500ms ease;
+        text-decoration: none; 
+    }
+
+    /* a:link {
+        font-family: 'webfont', sans-serif;
+        color: white;
+    } */
+
+    a:visited, a:active {
+        color: transparent;
+    }
+
+    a:hover, a:hover span {
+        background-position: 0 100%;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+        TEXT-DECORATION: none;
+        /* font-weight: 400; */
+    }
+}
+@media screen and (max-width: 800px){
+    a{
+        font-family: 'webfont', sans-serif;
+        position: relative;
+        font-weight: 400;
+        color:white;
+        -webkit-text-fill-color: white;
+        text-decoration: none;
+    }
+    a:hover, a:hover span {
+        color:#4ECCA3;
+    }
+    a:visited, a:active {
+        color: white;
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: #202020; 
+}
+   
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #505050; 
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #3da180; 
+}
+
+#boxes {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#col2 {
+    width: 60%;
+}
+
+
+.jank-fix{
+    display: inline-block;
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: inline-block;
+    /* background-color: white; */
+}
+
+.list-links {
+    font-family: 'webfont', sans-serif;
+    position: relative;
+    font-weight: 300;
+    overflow: hidden;
+    background:  #4ECCA3;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;   
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 500ms ease;
+    text-decoration: none; 
+}
+
+.preload {
+    width: 100vw;
+    height: 75vh;
+}
+
+.textblock {
+    margin-top: 38vh;
+}
+
+.intro-blurb{
+    /* padding-right: 40vw; */
+    font-family: 'webfont', sans-serif;
+    font-size: 0.02467232074vh;
+    
+    line-height: 4.351204351204351vh;
+    position: relative;
+    left: 40.7%;
+    /* can use font size 33 */
+    font-size: 2.5641025641025643vh;
+    padding-right: 5vw;
+    width: 60vw;
+    top:-2.3vh;
+    font-weight: 300;
+}
+
+.intro-nav{
+    position: -webkit-sticky;
+    /* sticky makes it so that it stays in place */
+    font-size: 1.1432012432012431vh;
+    position: sticky;
+    position: relative;
+    top: 2.15vh;
+    display: block;
+    left: 24.5%;
+    /* font-size: 18; */
+    width: 15vw;
+    margin-top: 38vh;
+    /* set to 0 for transition - fix later */
+    opacity: 1;
+    transition: opacity 0.4s;
+}
+
+.intro-nav.visible{
+    opacity:0;
+}
+
+.intro-block {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: flex;
+    width: 65vw;
+    height: 140vh;
+    
+}
+
+.final-block{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: 10vw;
+    margin-left: 15vw;
+    /* width: 65vw; */
+    margin-top: 15vh;
+    height: 60vh;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.general-block{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: flex;
+    margin-right: 10vw;
+    margin-left: 15vw;
+    /* padding:bottom; */
+    /* can switch to 100 if need more room */
+    height: 80vh;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.extended-general-block{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -moz-box;
+    display: flex;
+    margin-right: 10vw;
+    margin-left: 15vw;
+    /* padding:bottom; */
+    /* can switch to 100 if need more room */
+    height: 130vh;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.general-nav{
+    opacity: 0;
+    color: white;
+    position: -webkit-sticky;
+    position: sticky;
+    font-size: 1.1432012432012431vh;
+    left: 16.45%;
+    top: 40vh;
+    width: 10vw;
+    height: 10vh;
+    z-index: 100;
+    transition: opacity 0.4s;
+}
+
+.general-nav.visible{
+    opacity:1;
+    color:white;
+}
+
+.list-elem {
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: inline-block;
+    margin-bottom: 4vh;
+    font-weight: none;
+}
+
+.list-elem-name {
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: inline-block;
+    margin-bottom: 1.2432012432012431vh;
+    float: left;
+    font-family: 'webfont', sans-serif;
+    color: white;
+    font-size: 1.7094017094017093vh;
+    line-height: 2.4864024864024863vh;
+    font-weight: 400;
+}
+
+.list-elem-desc {
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: inline-block;
+    font-weight: 300; 
+    font-size: 1.2043512043512044vh;
+    color:rgb(124, 124, 124);
+    -webkit-text-fill-color:rgb(124, 124, 124);
+    width: 36vw;
+}
+
+.list-elem-date {
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: inline-block;
+    float: right;
+    font-family: 'webfont', sans-serif;
+    color:white;
+    font-size: 1.54001554001554vh;
+    line-height: 2.4864024864024863vh;
+    color: rgb(124, 124, 124);
+    /* -webkit-text-fill-color:rgb(124, 124, 124); */
+    font-weight: 200;
+}
+
+.list-block {
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: inline-block;
+    font-family: 'webfont', sans-serif;
+    font-size: 2.4864024864024863vh;
+    right: 30%;
+    line-height: 4.351204351204351vh;
+    width: 50vw;
+    margin-right: 12.9vw;
+    margin-top:-4.25vh;
+    font-weight: 300;
+}
+
+.content-block {
+    display:block !important;
+    font-family: 'webfont', sans-serif;
+    font-size: 2.4864024864024863vh;
+    left: 30%;
+    line-height: 4.351204351204351vh;
+    width: 46vw;
+    margin-right: 12.9vw;
+    margin-top:-0.6vh;
+    font-weight: 300;
+    overflow: visible;
+    z-index: 100;
+}
+
+.additional-info-block{
+    font-family: 'webfont', sans-serif;
+    font-size: 1.4763014763014763vh;
+    right: 30%;
+    line-height: 4.351204351204351vh;
+    width: 50vw;
+    margin-right: 12.9vw;
+    margin-top:-1.45vh;
+    font-weight: 200;
+    color: rgb(143, 143, 143)
+}
+
+
+.fade-in {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation: fadeIn ease 1.5s;
+    animation-delay: 501ms;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: fadeIn;
+    -webkit-animation: fadeIn ease 1.5s;
+    -webkit-animation-delay:501ms;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-name: fadeIn;
+    -moz-animation: fadeIn ease 1.5s;
+    -moz-animation-delay:501ms;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-name: fadeIn;
+    -o-animation: fadeIn ease 1.5s;
+    -o-animation-delay:501ms;
+    -o-animation-fill-mode: forwards;
+    -ms-animation-name: fadeIn;
+    -ms-animation: fadeIn ease 1.5s;
+    -ms-animation-delay:501ms;
+    -ms-animation-fill-mode: forwards;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+  } 
+ }
