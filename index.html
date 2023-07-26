@@ -47,15 +47,6 @@
                         $(tag).addClass("list-links");
                     }
                     
-                    // $("a").css("cssText", "-webkit-text-fill-color: white !important");
-                    // $("a").css("cssText", "background: white");
-                    // $("a").css("cssText", "background-clip: text");
-                    // $("a").css("cssText", "-webkit-background-clip: text");
-                    // $("a").hover(function() {
-                    //     $(this).css("color","#4ECCA3 !important");
-                    //     $(this).css("-webkit-text-fill-color","white"); 
-                    // });
-                    console.log("test");
                 }
             }
             );
@@ -67,9 +58,6 @@
                 // console.log(tags);
                 for (var i = 0; i < tags.length; i++) {
                     var nav_tag = tags[i];
-                    // console.log("i = "+i);
-                    // console.log($(nav_tag).position().top);
-                    // console.log(pageTop);
                     if ($(nav_tag).position().top <= 150+((pageTop+pageBottom)/2) && $(nav_tag).position().top >=((pageTop+pageBottom)/2)-150) {
                         // $(".intro-nav").removeClass("visible")
                         $(nav_tag).addClass("visible");
@@ -79,7 +67,6 @@
 
                     } else {  
                         $(nav_tag).removeClass("visible");
-                        // $(".intro-nav").addClass("visible");
                     }
                 }
             })
@@ -101,7 +88,7 @@
                 </div> 
                 <div class = "intro-blurb">
                     <span class="fade-in"> 
-                    <a href="https://youtu.be/rEq1Z0bjdwc?t=6" target= "_blank"  id = "general-kenobi"> Hello There </a>  <!--onclick="document.getElementById('general-kenobi').innerHTML='Hello There ... General Kenobi';"     <span id = "kenobi">... General Kenobi</span></a> -->
+                    <a href="https://youtu.be/rEq1Z0bjdwc?t=6" target= "_blank"  id = "general-kenobi">Hello There,</a>  <!--onclick="document.getElementById('general-kenobi').innerHTML='Hello There ... General Kenobi';"     <span id = "kenobi">... General Kenobi</span></a> -->
                     <br>
                     I am Shyam Patel: a developer, bio nerd, regular nerd, and minimalist. 
                     <br>

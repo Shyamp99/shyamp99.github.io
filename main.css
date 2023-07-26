@@ -213,11 +213,11 @@ li {
 
 
 .jank-fix{
+    background-color: white;
     display: inline-block;
     display: -webkit-inline-box;
     display: -moz-inline-box;
     display: inline-block;
-    /* background-color: white; */
 }
 
 .list-links {
