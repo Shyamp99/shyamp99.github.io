@@ -213,7 +213,8 @@ li {
 
 
 .jank-fix{
-    background-color: white;
+    /*  make the whole block white
+    background-color: white; */
     display: inline-block;
     display: -webkit-inline-box;
     display: -moz-inline-box;
@@ -335,7 +336,7 @@ li {
     margin-left: 15vw;
     /* padding:bottom; */
     /* can switch to 100 if need more room */
-    height: 130vh;
+    height: 115vh;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
